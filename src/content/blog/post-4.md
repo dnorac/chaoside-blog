@@ -6,15 +6,17 @@ title: "Não diga apenas 'olá' / 'bom dia' no chat"
 
 > você: Bom dia
 > colega: Bom dia.
-> ...
->
-> # COLEGA AGUARDA ENQUANTO VOCÊ ESCREVE SUA PERGUNTA...
 >
 > ...
 >
-> # Algum tempo depois...
+> \# COLEGA AGUARDA ENQUANTO VOCÊ ESCREVE SUA PERGUNTA...
+>
+> ...
+>
+> \# Algum tempo depois...
 >
 > você: Eu estou trabalhando em [alguma coisa] e estou tentando fazer [etc...]
+>
 > colega: Ah, nesse caso [resposta...]
 
 É como se você ligasse para alguém no telefone, dissesse "Oi!" e fizesse a pessoa aguardar!
@@ -22,6 +24,7 @@ title: "Não diga apenas 'olá' / 'bom dia' no chat"
 Por favor, faça isso:
 
 > você: Oi -- Eu estou trabalhando em [alguma coisa] e estou tentando fazer [etc...]
+>
 > colega: [responde a pergunta]
 
 Você recebe ajuda bem mais rápido e não faz ninguém esperar. Seu colega pode começar a pensar na sua pergunta imediatamente!

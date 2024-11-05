@@ -72,9 +72,14 @@ const { Content } = await post.render();
   }
 
   blockquote {
-    @apply border-l-4 p-4 mt-4 font-mono bg-slate-100 dark:bg-slate-950;
+    @apply border-l-4 border-white dark:border-blue-600 p-4 mt-4 font-mono bg-slate-100 dark:bg-slate-950 rounded-r-xl;
+
     p {
-      @apply m-0;
+      @apply m-0 text-sm;
+    }
+
+    p:not(:first-child) {
+      @apply mt-4;
     }
   }
 
