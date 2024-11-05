@@ -28,10 +28,10 @@ const { Content } = await post.render();
         <a
           href={post.data.originalUrl}
           target="_blank"
-          class="mt-4 text-slate-500 text-sm p-4 group border-2 border-slate-200 flex justify-between"
+          class="mt-4 text-slate-500 dark:text-slate-400 text-sm p-4 hover:no-underline group border-2 border-slate-200 dark:border-slate-800 flex justify-between"
         >
           Este artigo foi publicado originalmente no LinkedIn.
-          <span class="text-blue-600 group-hover:underline">
+          <span class="text-blue-600 dark:text-slate-300 group-hover:underline">
             Ver artigo original <span class="sr-only">no Linkedin</span>
           </span>
         </a>
@@ -56,7 +56,7 @@ const { Content } = await post.render();
   }
 
   h2 {
-    @apply text-4xl text-slate-800 font-bold leading-[1.1] -mt-2 after:w-28 after:h-2 after:bg-blue-600 relative after:absolute after:top-[calc(100%_+_2rem)] mb-16 after:left-0;
+    @apply text-4xl text-slate-800 dark:text-slate-300 font-bold leading-[1.1] -mt-2 after:w-28 after:h-2 after:bg-blue-600 relative after:absolute after:top-[calc(100%_+_2rem)] mb-16 after:left-0;
   }
 
   h3 {
@@ -79,6 +79,6 @@ const { Content } = await post.render();
   }
 
   a {
-    @apply text-blue-600 hover:underline;
+    @apply text-blue-600 dark:text-blue-300 hover:underline;
   }
 </style>

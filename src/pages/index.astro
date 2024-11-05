@@ -5,13 +5,13 @@ import Layout from "../layouts/Layout.astro";
 const posts = await getCollection("blog");
 ---
 
-<Layout title="Welcome to Astro." description="Astro description">
-  <article class="divide-y-2">
+<Layout title="Chaoside">
+  <article class="divide-y-2 dark:divide-slate-800">
     {
       posts.map((post) => (
         <a
           href={`/articles/${post.slug}`}
-          class="text-3xl text-slate-800 font-semibold block py-4"
+          class="text-3xl text-slate-800 dark:text-slate-300 font-semibold block py-4"
         >
           {post.data.title}
         </a>
