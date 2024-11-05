@@ -1,0 +1,84 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("blog");
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { slug } = Astro.params;
+if (slug === undefined) throw new Error("You must provide a slug");
+const post = await getEntry("blog", slug);
+if (post === undefined) {
+  return Astro.redirect("/404");
+}
+const { Content } = await post.render();
+---
+
+<Layout title="Welcome to Astro." description="Astro description">
+  <article>
+    <h2>{post.data.title}</h2>
+
+    {
+      post.data.originalUrl && (
+        <a
+          href={post.data.originalUrl}
+          target="_blank"
+          class="mt-4 text-slate-500 text-sm p-4 group border-2 border-slate-200 flex justify-between"
+        >
+          Este artigo foi publicado originalmente no LinkedIn.
+          <span class="text-blue-600 group-hover:underline">
+            Ver artigo original <span class="sr-only">no Linkedin</span>
+          </span>
+        </a>
+      )
+    }
+
+    <Content />
+  </article>
+</Layout>
+
+<style is:global>
+  .astro-code {
+    @apply p-2 mt-4 border;
+  }
+
+  ol {
+    @apply list-decimal ml-8 mt-4;
+  }
+
+  ul {
+    @apply list-disc ml-8 mt-4;
+  }
+
+  h2 {
+    @apply text-4xl text-slate-800 font-bold leading-[1.1] -mt-2 after:w-28 after:h-2 after:bg-blue-600 relative after:absolute after:top-[calc(100%_+_2rem)] mb-16 after:left-0;
+  }
+
+  h3 {
+    @apply text-3xl font-medium mt-4;
+  }
+
+  h4 {
+    @apply text-2xl font-medium mt-4;
+  }
+
+  p {
+    @apply mt-6 text-lg leading-7 hyphens-auto;
+  }
+
+  blockquote {
+    @apply border-l-4 p-4 mt-4 font-mono;
+    p {
+      @apply m-0;
+    }
+  }
+
+  a {
+    @apply text-blue-600 hover:underline;
+  }
+</style>
